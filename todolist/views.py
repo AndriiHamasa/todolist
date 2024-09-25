@@ -14,6 +14,7 @@ class TaskCreateView(generic.CreateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy("todolist:task-list")
+    queryset = Task.objects.prefetch_related("tags").all()
 
 
 class TaskUpdateView(generic.UpdateView):
