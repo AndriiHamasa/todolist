@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="position: relative; margin-bottom: 30px;">
+    <h1>ToDO list</h1>
+    <a href="{% url 'todolist:tag-create' %}" class="btn btn-outline-secondary btn-lg"
+       style="position: absolute; top: 0; right: 50px;">Create Tag</a>
+  </div>
+  {% if tag_list %}
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for tag in tag_list %}
+        <tr>
+          <th scope="row">{{ tag.name }}</th>
+          <td><a href="{% url 'todolist:tag-update' pk=tag.id %}" class="btn btn-secondary">Update</a></td>
+          <td><a href="{% url 'todolist:tag-delete' pk=tag.id %}" class="btn btn-danger">Delete</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+  {% else %}
+    <p>There are no tags yet. Create them</p>
+  {% endif %}
+{% endblock %}

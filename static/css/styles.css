@@ -1,0 +1,32 @@
+body {
+    margin-top: 20px;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+ul {
+    padding: 0; /* Убираем отступы у списка */
+}
+
+ul li.card-task {
+    flex: 1 1 calc(33.33% - 20px); /* Делаем три карточки в ряд с учетом gap */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px; /* Минимальная высота карточек */
+}
+
+.card-task {
+    width: 100%;
+    /*text-align: center;*/
+    border: 1px solid #ccc;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
