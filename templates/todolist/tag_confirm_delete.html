@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="width: 30vw; margin: 10vw 15vw 0;">
+    <h1 style="margin-bottom: 30px;">Delete tag?</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <a href="javascript:history.go(-1)" class="btn btn-secondary btn-lg">No</a>
+      <input type="submit" value="Yes" class="btn btn-danger btn-lg">
+    </form>
+  </div>
+{% endblock %}  
